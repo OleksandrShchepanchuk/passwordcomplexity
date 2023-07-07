@@ -11,6 +11,11 @@ export class PasswordFormComponent {
     @Input() password: string = "";
     colors: string[] = [];
     strength: string = '';
+    inputType: string = "password";
+    
+    toggleInputType() {
+      this.inputType = (this.inputType === "password") ? "text" : "password";
+    }
     
     setValue (event: Event) {
             this.password = (event.target as HTMLTextAreaElement).value.replaceAll(' ', '');
